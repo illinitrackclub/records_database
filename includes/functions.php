@@ -455,7 +455,7 @@ function getMeet($id = FALSE, $year = FALSE, $season = FALSE, $num=FALSE, $desc=
  */
 function printNav($page)
 	{
-	$b1=$b2=$b3=$b4=$b5 = '';
+	$b1=$b2=$b3=$b4=$b5=$b6='';
 	$admin = false;
 	$active = 'class="active"';
 		switch($page)
@@ -481,6 +481,8 @@ function printNav($page)
 			case 'results':
 				$b5 = $active;
 				break;
+			case 'login':
+				$b6 = $active;
 			default:
 		}
 		
@@ -526,7 +528,7 @@ function printNav($page)
                   </ul>
         
                   <ul class=\"nav pull-right\">
-                    <li><a href=\"http://illinoistrackclub.com/\">ITC Home</a></li>
+                    <li $b6><a href=\"$pfx\\login.php\">Log In</a></li>
                     <li class=\"divider-vertical\"></li>
                   </ul>
                 </div><!-- /.nav-collapse -->

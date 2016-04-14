@@ -104,7 +104,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><?php=$titleText ?></title>
+    <title><?php echo $titleText; ?></title>
     <meta charset="UTF-8">
     
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
