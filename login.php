@@ -62,7 +62,7 @@
 				
                if ($_POST['username'] == $username && 
                   $_POST['password'] == $userpassword) {
-                  $_SESSION['valid'] = true;
+                  $_SESSION['loggedin'] = true;
                   $_SESSION['timeout'] = time();
                   $_SESSION['username'] = $username;
                   

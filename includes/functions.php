@@ -491,6 +491,14 @@ function printNav($page)
 		else
 			$pfx = ".";
 
+		if($_SESSION['loggedin']){
+			$sessionText = "Log Out";
+			$loginUrl = "logout.php";
+		} else {
+			$sessionText = "Log In";
+			$loginUrl = "login.php";
+		}
+
 		echo "
 		 <!-- Navigation --> 
           <div class=\"navbar-static-top\">
@@ -528,7 +536,7 @@ function printNav($page)
                   </ul>
         
                   <ul class=\"nav pull-right\">
-                    <li $b6><a href=\"$pfx\\login.php\">Log In</a></li>
+                    <li $b6><a href=\"$pfx\\$loginUrl\">$sessionText</a></li>
                     <li class=\"divider-vertical\"></li>
                   </ul>
                 </div><!-- /.nav-collapse -->
