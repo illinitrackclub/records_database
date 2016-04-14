@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* Additional Styles for the website */
+/*Downsize container. 10 Columns instead of 12 are available*/
+.container {
+	width:780px;
+}
+
+.dropdown-menu.results{
+	position:relative;
+	float:none;
+	border:none;
+	box-shadow:none;
+	padding:0;
+}
+
+.multiform div {
+	display:block;
+	margin-right:10px;
+	float:left;
+}
+
+.multiform input, select{
+	width:auto;
+}

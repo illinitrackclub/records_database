@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* FORM STYLES */
+form fieldset{
+	border-width:1px;
+	border-style:solid;
+	border-color:#333333;
+	background-color:#FFFFCC;
+	margin:5px 0px 20px 0px;
+	width:350px;
+	position:relative;
+	display:block;
+	padding: 10px 10px 10px 10px;	
+}
+
+.form450 fieldset {
+	width:450px;
+}
+
+.form450 label {
+	margin-left:15px;
+}
+
+.form350 fieldset {
+	width:350px;
+}
+
+form label {
+	display:block;
+	float:left;
+	width:120px; /*to make the label area larger increase this. You might have to make form wider aswell*/
+	text-align:right;
+	margin:0px 5px 0px 0px;
+}
+
+
+/* Styles for messages */
+#msg {
+	text-align:center;
+	font-size:18px;
+	padding-top:1em;
+	padding-bottom:1em;
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	border: 2px solid;
+	max-width:700px;
+}
+.success {
+	background: #01A775; 
+	color: #264409; 
+	border-color: #c6d880;
+}
+
+.error {
+	background: #fbe3e4; 
+	color: #8a1f11; 
+	border-color: #fbc2c4;
+}
+.warning { 
+	background: #fff6bf; 
+	color: #514721; 
+	border-color: #ffd324;	
+}
+
+/*Profile Styles */
+#main {
+	width:810px;
+	margin:0 auto;
+	padding: 5px;;
+	background: #06C;
+}
+
+#header {
+	margin-left: auto;
+	margin-right:auto;
+	padding: 5px;
+	min-height:100px;
+	background: #FFF;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+#header h2 {
+	margin:0px;
+}
+
+#content {
+	min-height:400px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:5px;
+	margin-top:10px;
+	background-color:#FFF;
+}
+
+#content h2 {
+	text-align:center;
+}
+	
+#footer {
+	text-align:center;
+	font-size:10px;
+	font-family:Verdana, Geneva, sans-serif;
+	margin:5 auto;
+	padding:5px;
+	background:#FFFFFF;
+}
