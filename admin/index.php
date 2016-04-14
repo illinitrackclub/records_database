@@ -1,4 +1,4 @@
-<?
+<?php
 	//start the session and include user data
 	session_start();	
 	include_once('../includes/config.php');
@@ -30,7 +30,7 @@
  	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript">
                     $(document).ready(function() {
-                        $("#name-input").tokenInput("http://illinoistrackclub.com/results/json.php?t=n", {
+                        $("#name-input").tokenInput("../json.php?t=n", {
                             tokenLimit: 1
                         });
                     });
@@ -44,7 +44,7 @@
     	<h1>Illinois Track Club Records &amp; Results</h1>
   	</header>
   
- <? printNav('admin-index');?>
+ <?php printNav('admin-index');?>
 
   
   <div class="container">
@@ -104,7 +104,7 @@
         <div class="span4">
         <h4>Latest Results</h4>
 		<ul>
-		<?
+		<?php
 			$results = getMeet(false, false, false, 5, true);
 			foreach ($results as $r)
 			{
@@ -116,7 +116,7 @@
         <br><br>
         <h4>Most Recent Club Records</h4>
         <ul>
-		<?
+		<?php
 			$records = getRecentRecords(5);		
 
 			foreach($records as $r)
@@ -134,7 +134,7 @@
 		<br /><br />
 		<h4>Oldest Club Records</h4>
 		<ul>
-		<?
+		<?php
 			$records = getRecentRecords(5, TRUE);			
 			foreach($records as $r)
 			{

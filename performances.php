@@ -1,4 +1,4 @@
-<?
+<?php
 	//Calculate page load time
 	$time = microtime();
 	$time = explode(' ', $time);
@@ -50,11 +50,11 @@
   	</header>
   
       <!-- Navigation --> 
-<? printNav('performances'); ?>
+<?php printNav('performances'); ?>
   
     <!-- Begin Container -->
     <div class="container">
-    <?
+    <?php
 		if($_GET['s'] == 'xc')
 		{
 		?> 
@@ -68,7 +68,7 @@
             <h3>Cross Country</h3>
             <div class="span5">
             <h4>Men</h4>
-            <?
+            <?php
 				$xcEvents = getEvents(false, "xc");
                 foreach($xcEvents as $xe)
                 {
@@ -104,7 +104,7 @@
             </div>
             <div class="span5">
             <h4>Women</h4>
-            <?
+            <?php
                 foreach($xcEvents as $xe)
                 {
                     $topPerf = getResults(false, false, 2, $xe['id'], 10);
@@ -148,7 +148,7 @@
 		   	<h3>Indoor Track</h3>
             <div class="span5">
             <h4>Men</h4>
-            <?
+            <?php
                 foreach($itEvents as $ite)
                 {
                     $topPerf = getResults(false, false, 1, $ite['id'], 10);
@@ -186,7 +186,7 @@
             </div>
             <div class="span5">
             <h4>Women</h4>
-            <?
+            <?php
                 foreach($itEvents as $ite)
                 {
                     $topPerf = getResults(false, false, 2, $ite['id'], 10);
@@ -234,7 +234,7 @@
         <div class="row">
             <div class="span5">
 			<h4>Men</h4>
-			<?
+			<?php
             $otEvents = getEvents(false, "ot");	
                 foreach($otEvents as $ote)
                    {
@@ -273,7 +273,7 @@
             </div>
                 <div class="span5">
                 <h4>Women</h4>
-                <?
+                <?php
                     foreach($otEvents as $ote)
                     {
                         $topPerf = getResults(false, false, 2, $ote['id'], 10);
@@ -326,7 +326,7 @@
             <a href="performances.php?s=ot">Outdoor Track</a><br>    
             </div>
        </div>           
-        <?
+        <?php
 		
 		
 		}	
@@ -338,7 +338,7 @@
     
     </div> <!-- end row -->
    
-    <?
+    <?php
 	$time = microtime();
 	$time = explode(' ', $time);
 	$time = $time[1] + $time[0];

@@ -1,4 +1,4 @@
-<?
+<?php
 	//start the session and include user data
 	session_start();	
 	include_once('includes/config.php');
@@ -35,7 +35,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ITC: <?="$p[first] $p[last]'s"; ?> Running Profile</title>
+<title>ITC: <?php="$p[first] $p[last]'s"; ?> Running Profile</title>
 <link href="includes/styles.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -50,14 +50,14 @@
     <div id="content">
     <a href="index.php">Home</a> > <a href="profile.php">Runner Profiles</a> > 
 
-    <?
+    <?php
 		if(empty($nameID))
 		{
 			?>
 			<h2>Runner Profiles</h2>
             <p>Click a name to view the running history of the athlete with the Illinois Track Club</p>
             <ul>
-			<?
+			<?php
 			$people = getPeople(false);
 			foreach($people as $p)
 			{

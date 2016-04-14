@@ -1,4 +1,4 @@
-<?
+<?php
 //This file will update the new records db in the events table. Works as of 4-12-2013
 
 //start the session and include user data

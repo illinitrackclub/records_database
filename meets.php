@@ -1,4 +1,4 @@
-<?
+<?php
 	//start the session and include user data
 	session_start();	
 	include_once('includes/config.php');
@@ -27,7 +27,7 @@
     <div id="content">
     <a href="index.php">Home</a> > <a href="performances.php">Meet Results</a> > 
 
-    <?	
+    <?php	
 	$allMeets = getMeet();
 	$sorted = array();
 	foreach($allMeets as $am)

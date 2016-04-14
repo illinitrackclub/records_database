@@ -1,4 +1,4 @@
-<?
+<?php
 	//start the session and include user data
 	session_start();	
 	include_once('includes/config.php');
@@ -32,14 +32,14 @@
   	</header>
   
       <!-- Navigation --> 
-<? printNav('results'); ?>
+<?php printNav('results'); ?>
 
 <!-- Begin Container -->
     <div class="container">
 
 	
 
-    <?	
+    <?php	
 	$allMeets = getMeet();
 	$sorted = array();
 	foreach($allMeets as $am)

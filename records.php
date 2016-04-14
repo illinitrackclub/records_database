@@ -1,4 +1,4 @@
-<?
+<?php
 	//Calculate page load time
 	$time = microtime();
 	$time = explode(' ', $time);
@@ -49,7 +49,7 @@
   	</header>
   
       <!-- Navigation --> 
-<? printNav('records'); ?>
+<?php printNav('records'); ?>
   
     <!-- Begin Container -->
     <div class="container">
@@ -74,7 +74,7 @@
     <h2>Club Records</h2>
   </header>
 
-  <?
+  <?php
 	foreach($rnew as $k=>$r)
 	{
 		//print the first part of the table
@@ -93,7 +93,7 @@
 				 <tr><th>Men</th><th>Event</th><th>Women</th></tr>
 				</thead>
 				<tbody>
-			<?			
+			<?php			
 		}
 		elseif($k == 'it')
 		{
@@ -110,7 +110,7 @@
 				 <tr><th>Men</th><th>Event</th><th>Women</th></tr>
 				</thead>
 				<tbody>
-			<?
+			<?php
 		}
 		elseif($k == 'ot')
 		{
@@ -127,7 +127,7 @@
 				 <tr><th>Men</th><th>Event</th><th>Women</th></tr>
 				</thead>
 				<tbody>	
-			<?
+			<?php
 		}
 		//loop through each event and display the records
 		foreach($r as $e)

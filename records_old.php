@@ -1,4 +1,4 @@
-<?
+<?php
 	//Calculate page load time
 	$time = microtime();
 	$time = explode(' ', $time);
@@ -43,7 +43,7 @@
   	</header>
   
       <!-- Navigation --> 
-<? printNav('records'); ?>
+<?php printNav('records'); ?>
   
     <!-- Begin Container -->
     <div class="container">
@@ -80,7 +80,7 @@
          <tr><th>Men</th><th>Event</th><th>Women</th></tr>
         </thead>
         <tbody>
-        <?
+        <?php
 			$xcEvents = getEvents(false, 'xc');
 			foreach($xcEvents as $xce)
 			{
@@ -127,7 +127,7 @@
          <tr><th>Men</th><th>Event</th><th>Women</th></tr>
         </thead>
         <tbody>
-        <?
+        <?php
 			$itEvents = getEvents(false, 'it');
 			foreach($itEvents as $ite)
 			{
@@ -193,7 +193,7 @@
          <tr><th>Men</th><th>Event</th><th>Women</th></tr>
         </thead>
         <tbody>
-        <?
+        <?php
 			$otEvents = getEvents(false, 'ot');
 			foreach($otEvents as $ote)
 			{
@@ -247,7 +247,7 @@
       </div> 
     </section>
     
-    <?
+    <?php
 		$time = microtime();
 		$time = explode(' ', $time);
 		$time = $time[1] + $time[0];

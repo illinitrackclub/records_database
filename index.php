@@ -29,7 +29,7 @@
  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
                     $(document).ready(function() {
-                        $("#name-input").tokenInput("http://illinoistrackclub.com/results/json.php?t=n", {
+                        $("#name-input").tokenInput("../json.php?t=n", {
                             tokenLimit: 1
                         });
                     });

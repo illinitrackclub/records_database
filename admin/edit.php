@@ -1,4 +1,4 @@
-<?
+<?php
 	//start the session and include user data
 	session_start();	
 	include_once('../includes/config.php');
@@ -53,7 +53,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ITC | <?=$title;?></title>
+    <title>ITC | <?php=$title;?></title>
     <meta charset="UTF-8">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -71,7 +71,7 @@
  	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript">
                     $(document).ready(function() {
-                        $("#name-input").tokenInput("http://illinoistrackclub.com/results/json.php?t=n", {
+                        $("#name-input").tokenInput("../json.php?t=n", {
                             tokenLimit: 1
                         });
                     });
@@ -85,7 +85,7 @@
     	<h1>Illinois Track Club Records &amp; Results</h1>
   	</header>
 
-	<? printNav('admin-add');?>
+	<?php printNav('admin-add');?>
 
   
   <div class="container">
@@ -123,12 +123,12 @@
     <ul class="breadcrumb">
       <li><a href="../index.php">Home</a> <span class="divider">></span></li>
       <li><a href="index.php">Admin</a> <span class="divider">></span></li>    
-      <li class="active"><?=$title; ?></li>
+      <li class="active"><?php=$title; ?></li>
     </ul>
 
 	<div class="row">
     	<div class="span10">
-        <?
+        <?php
 			displayMessages($success, $error, $warning, $info);
 			
 			if($type == 'person') {
@@ -136,7 +136,7 @@
                 <h2>Edit a Person</h2>
                  
 				 
-				<?
+				<?php
 			}
 			else if ($type == 'meet')
 			{			
@@ -144,7 +144,7 @@
 				<h2>Edit a Meet</h2>
                 
 				
-				<?
+				<?php
 				
 			}
 			else if ($type == 'performance')
@@ -153,7 +153,7 @@
                 	<h2>Edit a Performance</h2>
                 
 
-                <?
+                <?php
 			}
 			else
 			{
@@ -161,7 +161,7 @@
 				   <a herf="edit.php?type=person">Edit a Person</a><br>
 				   <a herf="edit.php?type=meet">Edit a Meet</a><br>
 				  <a herf="edit.php?type=performance">Edit a Performance</a><br> 
-				<?
+				<?php
             } //end else	
 			?>
             <br><br>

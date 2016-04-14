@@ -1,4 +1,4 @@
-<?
+<?php
 	//Calculate page load time
 	$time = microtime();
 	$time = explode(' ', $time);
@@ -104,7 +104,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><?=$titleText ?></title>
+    <title><?php=$titleText ?></title>
     <meta charset="UTF-8">
     
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -122,7 +122,7 @@
  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
                     $(document).ready(function() {
-                        $("#name-input").tokenInput("http://illinoistrackclub.com/results/json.php?t=n", {
+                        $("#name-input").tokenInput("../json.php?t=n", {
                             tokenLimit: 1
                         });
                     });
@@ -136,16 +136,16 @@
     	<h1>Illinois Track Club Records &amp; Results</h1>
   	</header>
       <!-- Navigation -->  
-<? printNav('profile'); ?>
+<?php printNav('profile'); ?>
   
     <!-- Begin Container -->
     <div class="container">
     <ul class="breadcrumb">
       <li><a href="index.php">Home</a> <span class="divider">></span></li>
   	  <li><a href="profile.php">Profiles</a> <span class="divider">></span></li>
-      <li class="active"><? if (empty($_GET['id'])) echo "All Profiles"; else echo "$p[first] $p[last]"; ?></li>
+      <li class="active"><?php if (empty($_GET['id'])) echo "All Profiles"; else echo "$p[first] $p[last]"; ?></li>
     </ul>
-    <?
+    <?php
     	if(empty($nameID))
 		{
 			?>
@@ -163,7 +163,7 @@
                     <table class="table table-bordered table-condensed table-striped">
                         <tbody>
                             <tr>
-                            <?
+                            <?php
 								//echo out the names, split into 3 columns
 								$len = count($names);
 								foreach($names as $k=>$p)
@@ -182,13 +182,13 @@
                     </table>
             	</div>
             </div>
-	 <?			
+	 <?php			
 		}
 		else
 		{
 			?>
         	<header class="page-header">
-    			<h1><?="$p[first] $p[last]'s Performances" ?></h1>
+    			<h1><?php="$p[first] $p[last]'s Performances" ?></h1>
   			</header>  
             <div class="row">
                         <!-- Maybe include PR's or something? Disabled for now.
@@ -202,14 +202,14 @@
                     </table>
                     </tbody>
                     
-                    <? 
+                    <?php 
 					 
 					 ?>
     			</div>
    	                   -->  
 
             <div class="span6">       
-            <?	
+            <?php	
 			//Display Profile for someone.
 			$showms = 1;			
 			
@@ -281,7 +281,7 @@
      ?>
     </div>
     </div>
-    <?
+    <?php
 		$time = microtime();
 		$time = explode(' ', $time);
 		$time = $time[1] + $time[0];

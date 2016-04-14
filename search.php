@@ -1,4 +1,4 @@
-<?
+<?php
 	//Calculate page load time
 	$time = microtime();
 	$time = explode(' ', $time);
@@ -40,7 +40,7 @@
   	</header>
   
       <!-- Navigation --> 
-<? printNav('performances'); ?>
+<?php printNav('performances'); ?>
   
     <!-- Begin Container -->
     <div class="container">
@@ -52,12 +52,12 @@
         
         <div class="row">
             <div class="span5">
-            <? echo "You have searched for <strong>$_GET[s]</strong>. The search function is not yet active, please go back and use the autocomplete box to search for a name."; ?>
+            <?php echo "You have searched for <strong>$_GET[s]</strong>. The search function is not yet active, please go back and use the autocomplete box to search for a name."; ?>
                     
             </div>    
     </div> <!-- end row -->
    
-    <?
+    <?php
 	$time = microtime();
 	$time = explode(' ', $time);
 	$time = $time[1] + $time[0];

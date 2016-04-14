@@ -1,10 +1,10 @@
-<?
+<?php
 //this file should create JSON formatted results (whatever that means)	
 	$type = $_GET['t'];
 	$season = $_GET['s'];
 	
 	#connect to the db
-	mysql_pconnect("mysql.illinoistrackclub.com", "illinitrackclub", "75tUQe4en4Pe+&Je") or die("Could not connect");
+	mysql_pconnect("localhost") or die("Could not connect");
 	mysql_select_db("illinitrackclub_agprojec") or die("Could not select database");
 	
 	# Perform the query

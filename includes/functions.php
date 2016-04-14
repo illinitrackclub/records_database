@@ -456,6 +456,7 @@ function getMeet($id = FALSE, $year = FALSE, $season = FALSE, $num=FALSE, $desc=
 function printNav($page)
 	{
 	$b1=$b2=$b3=$b4=$b5 = '';
+	$admin = false;
 	$active = 'class="active"';
 		switch($page)
 		{
@@ -605,7 +606,9 @@ function perfSort($a, $b)
 		else
 			$idList .=", $r[perf_id]";
 	}
-	$query2 = "SELECT name_id, seconds, ms, mark, date from `records_performances` WHERE id IN($idList) ORDER BY id DESC";
+	if ($idList == NULL)
+		return "No records";
+	$query2 = "SELECT name_id, seconds, ms, mark, date from `records_performances` WHERE id IN ($idList) ORDER BY id DESC";
 		
 	try 
 	{

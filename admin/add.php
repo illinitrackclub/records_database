@@ -1,4 +1,4 @@
-<?
+<?php
 	//start the session and include user data
 	session_start();	
 	include_once('../includes/config.php');
@@ -145,7 +145,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ITC | <?=$title;?></title>
+    <title>ITC | <?php$title;?></title>
     <meta charset="UTF-8">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -163,7 +163,7 @@
  	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript">
                     $(document).ready(function() {
-                        $("#name-input").tokenInput("http://illinoistrackclub.com/results/json.php?t=n", {
+                        $("#name-input").tokenInput("../json.php?t=n", {
                             tokenLimit: 1
                         });
                     });
@@ -177,7 +177,7 @@
     	<h1>Illinois Track Club Records &amp; Results</h1>
   	</header>
 
-	<? printNav('admin-add');?>
+	<?php printNav('admin-add');?>
 
   
   <div class="container">
@@ -215,12 +215,12 @@
     <ul class="breadcrumb">
       <li><a href="../index.php">Home</a> <span class="divider">></span></li>
       <li><a href="index.php">Admin</a> <span class="divider">></span></li>    
-      <li class="active"><?=$title; ?></li>
+      <li class="active"><?php=$title; ?></li>
     </ul>
 
 	<div class="row">
     	<div class="span10">
-        <?
+        <?php
 			displayMessages($success, $error, $warning, $info);
 			
 			if($type == 'person') {
@@ -231,7 +231,7 @@
                         
                         <div>
                             <label for="firstName">First Name *</label>
-                            <?
+                            <?php
 								$tc = 1;
 								for($i=0; $i<$n; $i++)
 								{
@@ -243,7 +243,7 @@
                         </div>          
                         <div>
                             <label for="lastName">Last name *</label>
-                            <?
+                            <?php
 								for($i=0; $i<$n; $i++)
 								{
 									$tn = $i*7+$tc;
@@ -256,7 +256,7 @@
                         
                         <div>
 							 <label for="sex">Sex</label>
-							<?
+							<?php
 								for($i=0; $i<$n; $i++)
 								{
 									$tn = $i*7+$tc;
@@ -268,7 +268,7 @@
                         </div>
                         <div>
                         	<label for="gradYr">Class</label>
-                            <?
+                            <?php
 								for($i=0; $i<$n; $i++)
 								{
 									$tn = $i*7+$tc;
@@ -279,7 +279,7 @@
                         </div>
                         <div>
                         	<label for="email">Email</label>
-                             <?
+                             <?php
 								for($i=0; $i<$n; $i++)
 								{
 									$tn = $i*7+$tc;
@@ -292,7 +292,7 @@
                         </div>
                         <div>
                             <label for="alumni">Alumni</label>
-                             <?
+                             <?php
 								for($i=0; $i<$n; $i++)
 								{
 									$tn = $i*7+$tc;
@@ -303,7 +303,7 @@
                         </div>
                         <div>
 							<label for="elite">Elite</label>
-                              <?
+                              <?php
 								for($i=0; $i<$n; $i++)
 								{
 									$tn = $i*7+$tc;
@@ -315,12 +315,12 @@
                     	</div>
                     <input type="hidden" name="type" value="person" /><br />
                     </fieldset>
-                    <a href="?type=person&n=<?=$n+5; ?>" tabindex="<? $tn++; echo $tn; ?>">Add more rows</a> (reloads page)<br />
-                    <input type="submit" name="Submit" value="Submit" tabindex="<? $tn++; echo $tn; ?>" />
-                    <input type="reset" name="Reset" value="Reset" tabindex="<? $tn++; echo $tn; ?>" />
+                    <a href="?type=person&n=<?php=$n+5; ?>" tabindex="<?php $tn++; echo $tn; ?>">Add more rows</a> (reloads page)<br />
+                    <input type="submit" name="Submit" value="Submit" tabindex="<?php $tn++; echo $tn; ?>" />
+                    <input type="reset" name="Reset" value="Reset" tabindex="<?php $tn++; echo $tn; ?>" />
                 </form>
                 * = Required Field              
-				<?
+				<?php
 			}
 			else if ($type == 'meet')
 			{			
@@ -330,7 +330,7 @@
                     <fieldset>
                 
                     <label for="year">Year:</label>
-                        <input name="year" type="text" size="5" value="<? echo date('Y'); ?>" required />*<br />
+                        <input name="year" type="text" size="5" value="<?php echo date('Y'); ?>" required />*<br />
                     <label for="season">Season:</label>
                         <select name="season">
                             <option value="xc">Cross Country</option>
@@ -340,17 +340,17 @@
                         </select><br /><br />
                         
                     <label for="startdate">Start Date:</label>
-                        <input type="date" name="startdate" size="10" value="<? if(!empty($error)) echo $_POST['startdate']; ?>" required />*<br />
+                        <input type="date" name="startdate" size="10" value="<?phpif(!empty($error)) echo $_POST['startdate']; ?>" required />*<br />
                     <label for="enddate">End Date:</label>
-                        <input type="date" name="enddate" size="10" value="<? if(!empty($error)) echo $_POST['enddate']; ?>" required/>*<br />
+                        <input type="date" name="enddate" size="10" value="<?php if(!empty($error)) echo $_POST['enddate']; ?>" required/>*<br />
                         Date format: yyyy-mm-dd<br /><br />
                         
                     <label for="name">Meet Name</label>
-                        <input type="text" name="name" size="40" value="<? if(!empty($error)) echo $_POST['name']; ?>" required />*<br />
+                        <input type="text" name="name" size="40" value="<?php if(!empty($error)) echo $_POST['name']; ?>" required />*<br />
                     <label for="host">Host School</label>
-                        <input type="text" name="host" size="40" value="<? if(!empty($error)) echo $_POST['host']; ?>" required /><br />        
+                        <input type="text" name="host" size="40" value="<?php if(!empty($error)) echo $_POST['host']; ?>" required /><br />        
                     <label for="location">Location</label>
-                        <input type="text" name="location" size="20" value="<? if(!empty($error)) echo $_POST['location']; ?>"/><br />
+                        <input type="text" name="location" size="20" value="<?php if(!empty($error)) echo $_POST['location']; ?>"/><br />
                     <label for="course">Course</label>
                         <select name="course">
                             <option value="">N/A</option>
@@ -360,15 +360,15 @@
                         </select>
                     <br /> <br />       
                     <label for="results">Full Results URL</label>
-                        <input type="url" name="results" size="45" value="<? if(!empty($error)) echo $_POST['results']; ?>" /><br />
+                        <input type="url" name="results" size="45" value="<?php if(!empty($error)) echo $_POST['results']; ?>" /><br />
                     <label for="splitsURL">Splits URL</label>
-                        <input type="url" name="splitsURL" size="45" value="<? if(!empty($error)) echo $_POST['splitsURL']; ?>" />
+                        <input type="url" name="splitsURL" size="45" value="<?php if(!empty($error)) echo $_POST['splitsURL']; ?>" />
                     <label for="photos">Photo Album URL</label>
-                        <input type="url" name="photos" size="45" value="<? if(!empty($error)) echo $_POST['photos']; ?>" />
+                        <input type="url" name="photos" size="45" value="<?php if(!empty($error)) echo $_POST['photos']; ?>" />
                     <br /><br />
                     
                     <label for="notes">Notes:</label>
-                        <textarea name="notes" cols="35" rows="4"><? if(!empty($error)) echo $_POST['notes']; ?></textarea>     
+                        <textarea name="notes" cols="35" rows="4"><?php if(!empty($error)) echo $_POST['notes']; ?></textarea>     
                 
                     <input type="hidden" name="type" value="meet" /><br />
                     </fieldset>
@@ -378,7 +378,7 @@
                 </form>
 				
 				
-				<?
+				<?php
 				
 			}
 			else if ($type == 'performance')
@@ -431,7 +431,7 @@
                     <input type="reset" name="Reset" value="Reset" />
                     <input type="button" onclick="javascript:alert('seasonUrl: ' + seasonUrl)" />
                 </form>
-                <?
+                <?php
 			}
 			else
 			{
@@ -439,7 +439,7 @@
                <a herf="add.php?type=person">Add a Person</a><br>
 			   <a herf="add.php?type=meet">Add a Meet</a><br>
               <a herf="add.php?type=performance">Add a Performance</a><br> 
-            <?
+            <?php
                 }
 			
 			
